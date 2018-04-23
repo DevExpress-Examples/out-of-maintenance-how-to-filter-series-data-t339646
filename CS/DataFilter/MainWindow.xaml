@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataFilter"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" 
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:CarsDBDataSetTableAdapters="clr-namespace:DataFilter.CarsDBDataSetTableAdapters" 
+        x:Class="DataFilter.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="277" Width="494">
+    <Window.Resources>
+        <dx:TypedSimpleSource x:Key="TypedSimpleSource" 
+                              AdapterType="{x:Type CarsDBDataSetTableAdapters:CarsTableAdapter}" 
+                              ContextType="{x:Type local:CarsDBDataSet}" 
+                              Path="Cars">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:TypedSimpleSource>
+    </Window.Resources>
+    <Grid>
+        <dxc:ChartControl DataSource="{Binding Data, Source={StaticResource TypedSimpleSource}}">
+            <dxc:ChartControl.Legend>
+                <dxc:Legend/>
+            </dxc:ChartControl.Legend>
+            <dxc:XYDiagram2D>
+                <dxc:BarSideBySideSeries2D DisplayName="Cars" 
+                                           ArgumentDataMember="Model" 
+                                           ValueDataMember="Price" 
+                                           LabelsVisibility="True">
+                    <!--region #DataFilters-->
+                    <dxc:BarSideBySideSeries2D.DataFilters>
+                        <dxc:DataFilter x:Name="Filter1" ColumnName="Price" Condition="LessThan" Value="20000"/>
+                        <dxc:DataFilter x:Name="Filter2" ColumnName="Liter" Condition="GreaterThan" Value="2.3"/>
+                    </dxc:BarSideBySideSeries2D.DataFilters>
+                    <!--endregion #DataFilters-->
+                </dxc:BarSideBySideSeries2D>
+            </dxc:XYDiagram2D>
+        </dxc:ChartControl>
+
+    </Grid>
+</Window>
