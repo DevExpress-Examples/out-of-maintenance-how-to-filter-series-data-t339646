@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* **[MainWindow.xaml](./CS/DataFilter/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DataFilter/MainWindow.xaml))**
+<!-- default file list end -->
 # How to filter series data 
 
 
