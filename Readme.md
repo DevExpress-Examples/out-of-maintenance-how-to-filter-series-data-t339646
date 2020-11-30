@@ -5,14 +5,12 @@
 <!-- default file list end -->
 # How to filter series data 
 
+This example shows how to create a chart, bind it to a data source and filter series data.
 
-This example demonstrates how to add several filters to a series.
+To do this, follow these steps:
 
+* Create a chart and add a series. For more information, refer to the following topic: [How to Create Series](https://docs.devexpress.com/WPF/6339/controls-and-libraries/charts-suite/chart-control/chart-elements/series#how-to-create-series)
 
-<h3>Description</h3>
+* Bind the series to data. See the following topic: [Populate a series with data from a data source](https://docs.devexpress.com/WPF/6339/controls-and-libraries/charts-suite/chart-control/chart-elements/series#populate-a-series-with-data-from-a-data-source)
 
-<p>To do this, bind&nbsp;the&nbsp;series to a data source and add the&nbsp;<a href="https://documentation.devexpress.com/#WPF/clsDevExpressXpfChartsDataFiltertopic">DataFilter</a>&nbsp;object&nbsp;to the&nbsp;<a href="https://documentation.devexpress.com/#WPF/DevExpressXpfChartsSeries_DataFilterstopic">Series.DataFilters</a>&nbsp;collection.&nbsp;Specify&nbsp;the&nbsp;<a href="https://documentation.devexpress.com/#WPF/DevExpressXpfChartsDataFilter_ColumnNametopic">DataFilter.ColumnName</a>,&nbsp;<a href="https://documentation.devexpress.com/#WPF/DevExpressXpfChartsDataFilter_Conditiontopic">DataFilter.Condition</a>&nbsp;and&nbsp;<a href="https://documentation.devexpress.com/#WPF/DevExpressXpfChartsDataFilter_Valuetopic">DataFilter.Value</a>&nbsp;properties for each filter.</p>
-
-<br/>
-
-
+* Specify the [Series.FilterString](https://docs.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.FilterString?p=netframework) property to filter series data.

@@ -29,13 +29,8 @@
                 <dxc:BarSideBySideSeries2D DisplayName="Cars" 
                                            ArgumentDataMember="Model" 
                                            ValueDataMember="Price" 
-                                           LabelsVisibility="True">
-                    <!--region #DataFilters-->
-                    <dxc:BarSideBySideSeries2D.DataFilters>
-                        <dxc:DataFilter x:Name="Filter1" ColumnName="Price" Condition="LessThan" Value="20000"/>
-                        <dxc:DataFilter x:Name="Filter2" ColumnName="Liter" Condition="GreaterThan" Value="2.3"/>
-                    </dxc:BarSideBySideSeries2D.DataFilters>
-                    <!--endregion #DataFilters-->
+                                           LabelsVisibility="True"
+                                           FilterString="([Price] &lt; 20000) AND ([Liter] &gt; 2.3)">
                 </dxc:BarSideBySideSeries2D>
             </dxc:XYDiagram2D>
         </dxc:ChartControl>
